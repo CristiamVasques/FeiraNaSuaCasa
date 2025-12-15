@@ -1,0 +1,104 @@
+:root {
+  --hover-color: salmon;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+body {
+  background-color: #c5c1b5;
+  color: black;
+  /*font-family: Arial, Helvetica, sans-serif;*/
+  font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+}
+
+ul {
+	display: flex;
+	justify-content: space-between;
+	list-style-type: none;
+	align-items: center;
+	padding: 16px;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+header img {
+	weight: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 5px solid black;
+}
+
+.center, .registro {
+	text-align: center;
+}
+
+h1, h2 {
+	color: black;
+	text-align: center;
+}
+
+
+.credly, .googlecloud {
+	width: 34px;
+	height: 34px;
+	border-radius: 100%;
+	border: 3px solid black;
+}
+
+.github, .learn, .linkedin, .trailhead {
+	width: 40px;
+	height: 40px;
+	border-radius: 10%;
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+}
+
+footer a {
+	margin: 20px;
+	text-align: center;
+}
+
+footer p{
+	margin: 2px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	padding: 0px 10px;
+}
+
+nav a {
+	margin: 1px;
+	text-align: center;
+}
+
+main section p {
+	text-align: justify;
+}
+
+.outlook img, .whatsapp img, .lattes img, .orcid img {
+	weight: 30px;
+	height: 30px;
+	border-radius: 10%;
+	padding-right: 1%;
+}
+
+.outlook, .whatsapp, .lattes, .orcid {
+	display: flex;
+	align-items: center;
+}
+
+.versiculo {
+	text-align: center;
+	font-weight: bold;
+}
