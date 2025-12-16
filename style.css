@@ -199,7 +199,7 @@ h2 {
   margin: auto;
   font-size: 1.1em;
   text-align: left;
-  list-style: decimal-leading-zero; 
+  list-style: decimal; 
   padding-left: 20px;
 }
 .como-funciona ol li {
