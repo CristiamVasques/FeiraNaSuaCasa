@@ -1,50 +1,79 @@
+/* Importação de fonte moderna (Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Definição de Variáveis CSS (Cores) */
+:root {
+  --primary-color: #2e7d32; /* Verde Escuro (para contraste) */
+  --secondary-color: #ffca28; /* Amarelo Vibrante (para botões/destaques) */
+  --text-color: #333333; /* Preto quase puro */
+  --background-light: #f9f9f9;
+  --background-footer: #ededed;
+}
+
 /* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  /* Fonte atualizada */
+  font-family: 'Poppins', sans-serif; 
 }
 
 /* Corpo do site */
 body {
-  background: #f9f9f9; /* Fundo creme claro */
-  color: #333; /* Cor do texto principal */
-  scroll-behavior: smooth; /* Rolagem suave */
+  background: var(--background-light); 
+  color: var(--text-color);
+  scroll-behavior: smooth;
 }
 
-/* Header - ATUALIZADO com overlay escuro para melhor contraste */
+/* Header - Foco no Impacto Visual */
 .header {
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay Preto Semitransparente */
-    url('FrutasLegumes.jpeg') no-repeat center center; /* Imagem de Fundo */
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+    url('FrutasLegumes.jpeg') no-repeat center center;
   background-size: cover;
+  background-position: center; 
   color: #fff;
   text-align: center;
-  padding: 120px 20px;
-  position: relative;
+  /* Altura mínima para impacto visual */
+  min-height: 80vh; 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; 
 }
+.header h1 {
+    font-size: 3em; 
+    margin-bottom: 0.2em;
+}
+.header p {
+    font-size: 1.2em;
+}
+
 .header h1,
 .header p {
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.9); 
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s forwards;
 }
 .header .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #ffca28;
-  color: #fff;
+  margin-top: 30px;
+  padding: 15px 35px; 
+  background: var(--secondary-color);
+  color: var(--primary-color); 
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s, transform 0.3s;
+  font-weight: 700; 
+  border-radius: 50px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 .header .btn:hover {
   background: #e07b34;
   transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 .header .logo {
   position: absolute;
@@ -54,20 +83,32 @@ body {
   height: auto;
 }
 
-/* Seção Sobre - ATUALIZADO com overlay escuro e texto branco */
+/* Seção Sobre - Estilo consistente com o header, título branco */
 .sobre {
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay Preto Semitransparente */
-    url('FrutasLegumes.jpeg') no-repeat center center; /* Imagem de Fundo */
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url('FrutasLegumes.jpeg') no-repeat center center;
   background-size: cover;
-  color: #ffffff; /* Texto branco para contraste */
+  background-attachment: fixed; 
+  color: #ffffff; 
   text-align: center;
-  padding: 120px 20px;
+  padding: 100px 20px; 
   position: relative;
 }
+.sobre h2 {
+    /* CORREÇÃO APLICADA: Força o título H2 a ser BRANCO */
+    color: #ffffff; 
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.sobre p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1em;
+}
 .sobre h2, .sobre p {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Sombra preta para realçar o texto branco */
-    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); 
+    font-weight: 600;
 }
 
 /* Animação de fade-in */
@@ -80,12 +121,12 @@ body {
 
 /* Seções gerais */
 section {
-  padding: 50px 20px;
-  max-width: 1100px;
+  padding: 80px 20px; 
+  max-width: 1200px; 
   margin: auto;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s, transform 0.8s;
+  opacity: 0; 
+  transform: translateY(30px); 
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
 }
 section.visible {
   opacity: 1;
@@ -94,75 +135,115 @@ section.visible {
 
 h2 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px; 
+  font-size: 2.2em;
+  color: var(--primary-color);
 }
 
-/* Cards de pacotes */
+/* Cards de pacotes - Design Aprimorado e Correção de Visibilidade */
 .cards {
   display: flex;
-  gap: 20px;
+  gap: 30px; 
   flex-wrap: wrap;
   justify-content: center;
 }
 .card {
   background: #fff;
-  padding: 25px;
-  width: 280px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 30px; 
+  width: 300px; 
+  border-radius: 12px; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  opacity: 0;
-  transform: translateY(20px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.8s ease, transform 0.8s ease; 
+  
+  opacity: 0; 
+  transform: translateY(20px); 
 }
 .card.visible {
   opacity: 1;
   transform: translateY(0);
 }
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(-8px); 
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.card h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.card p {
+    /* CORREÇÃO: Garante que a descrição seja preta */
+    color: var(--text-color); 
+    margin-bottom: 25px;
+    font-size: 0.95em;
 }
 .card button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #ffca28;
-  color: #fff;
+  padding: 12px 25px;
+  background: var(--secondary-color);
+  color: var(--primary-color); 
   border: none;
-  border-radius: 5px;
+  border-radius: 50px; 
   cursor: pointer;
+  font-weight: 600;
   transition: background 0.3s;
 }
 .card button:hover {
   background: #e07b34;
+  color: #fff; 
 }
 
-/* Seção como funciona */
+/* Seção como funciona - Estilo de lista */
 .como-funciona ol {
-  max-width: 400px;
+  max-width: 500px;
   margin: auto;
-  font-size: 18px;
+  font-size: 1.1em;
+  text-align: left;
+  list-style: decimal-leading-zero; 
+  padding-left: 20px;
+}
+.como-funciona ol li {
+    margin-bottom: 15px;
+    padding-left: 10px;
 }
 
 /* Rodapé */
 .footer {
-  background: #EDEDED;
+  background: var(--background-footer);
   text-align: center;
-  padding: 20px;
-  color: #828282;
-  font-weight: bold;
+  padding: 25px 20px; 
+  color: #000;
+  font-weight: 400; 
+  font-size: 0.9em;
+  border-top: 3px solid var(--secondary-color); 
 }
 
-/* Responsividade */
+/* Responsividade - Ajustes finos */
 @media (max-width: 768px) {
+  .header {
+    min-height: 60vh;
+  }
+  .header h1 {
+    font-size: 2.2em;
+  }
   .cards {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
-  .header {
-    padding: 80px 20px;
+  .card {
+    width: 90%; 
   }
-  .header .logo {
-    width: 60px;
+  section {
+    padding: 50px 15px;
   }
+  h2 {
+    font-size: 1.8em;
+  }
+}
+@media (max-width: 480px) {
+    .header .btn {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
 }

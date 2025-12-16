@@ -8,7 +8,7 @@ function pedido(pacote) {
   window.open(url, "_blank");
 }
 
-// Relógio digital
+/* Relógio digital
 function updateClock() {
   const clock = document.getElementById('digiClock');
   const now = new Date();
@@ -20,6 +20,40 @@ function updateClock() {
   const year = now.getFullYear();
   clock.textContent = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 }
+setInterval(updateClock, 1000);
+updateClock();*/
+
+// Relógio digital - ATUALIZADO PARA INCLUIR DIA DA SEMANA E NOME DO MÊS
+function updateClock() {
+  const clock = document.getElementById('digiClock');
+  const now = new Date();
+
+  // Opções de formatação para data (dia da semana, dia, mês completo, ano)
+  const dateOptions = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  };
+  
+  // Opções de formatação para hora
+  const timeOptions = { 
+    hour: '2-digit', 
+    minute: '2-digit', 
+    second: '2-digit', 
+    hour12: false // Formato 24h
+  };
+
+  // Formata a data (Ex: Terça-feira, 16 de dezembro de 2025)
+  const formattedDate = now.toLocaleDateString('pt-BR', dateOptions);
+
+  // Formata a hora (Ex: 00:08:21)
+  const formattedTime = now.toLocaleTimeString('pt-BR', timeOptions);
+
+  // Combina e exibe
+  clock.textContent = `${formattedDate} | ${formattedTime}`;
+}
+
 setInterval(updateClock, 1000);
 updateClock();
 
@@ -47,6 +81,4 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
-
-
 

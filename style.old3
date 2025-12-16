@@ -1,0 +1,168 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Corpo do site */
+body {
+  background: #f9f9f9; /* Fundo creme claro */
+  color: #333; /* Cor do texto principal */
+  scroll-behavior: smooth; /* Rolagem suave */
+}
+
+/* Header - ATUALIZADO com overlay escuro para melhor contraste */
+.header {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay Preto Semitransparente */
+    url('FrutasLegumes.jpeg') no-repeat center center; /* Imagem de Fundo */
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+}
+.header h1,
+.header p {
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+.header .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ffca28;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.3s;
+}
+.header .btn:hover {
+  background: #e07b34;
+  transform: scale(1.05);
+}
+.header .logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: auto;
+}
+
+/* Seção Sobre - ATUALIZADO com overlay escuro e texto branco */
+.sobre {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay Preto Semitransparente */
+    url('FrutasLegumes.jpeg') no-repeat center center; /* Imagem de Fundo */
+  background-size: cover;
+  color: #ffffff; /* Texto branco para contraste */
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+}
+.sobre h2, .sobre p {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Sombra preta para realçar o texto branco */
+    font-weight: bold;
+}
+
+/* Animação de fade-in */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Seções gerais */
+section {
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Cards de pacotes */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  background: #fff;
+  padding: 25px;
+  width: 280px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #ffca28;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.card button:hover {
+  background: #e07b34;
+}
+
+/* Seção como funciona */
+.como-funciona ol {
+  max-width: 400px;
+  margin: auto;
+  font-size: 18px;
+}
+
+/* Rodapé */
+.footer {
+  background: #EDEDED;
+  text-align: center;
+  padding: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header {
+    padding: 80px 20px;
+  }
+  .header .logo {
+    width: 60px;
+  }
+}
