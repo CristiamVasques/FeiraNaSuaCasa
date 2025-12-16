@@ -13,11 +13,10 @@ body {
   scroll-behavior: smooth; /* Rolagem suave */
 }
 
-/* Header - ATUALIZADO com overlay escuro para melhor contraste */
+/* Header */
 .header {
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay Preto Semitransparente */
-    url('FrutasLegumes.jpeg') no-repeat center center; /* Imagem de Fundo */
+  background: url('header.jpg') no-repeat center center;
+  background: #2e7d32;
   background-size: cover;
   color: #fff;
   text-align: center;
@@ -26,7 +25,7 @@ body {
 }
 .header h1,
 .header p {
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s forwards;
@@ -54,20 +53,13 @@ body {
   height: auto;
 }
 
-/* Seção Sobre - ATUALIZADO com overlay escuro e texto branco */
 .sobre {
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay Preto Semitransparente */
-    url('FrutasLegumes.jpeg') no-repeat center center; /* Imagem de Fundo */
+  background: url('header.jpg') no-repeat center center;
   background-size: cover;
-  color: #ffffff; /* Texto branco para contraste */
+  color: #000000;
   text-align: center;
   padding: 120px 20px;
   position: relative;
-}
-.sobre h2, .sobre p {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Sombra preta para realçar o texto branco */
-    font-weight: bold;
 }
 
 /* Animação de fade-in */
