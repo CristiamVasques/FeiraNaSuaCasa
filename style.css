@@ -58,15 +58,15 @@ body {
 .sobre {
   background: 
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay Preto Semitransparente */
-    /*url('FrutasLegumes.jpeg') no-repeat center center; /* Imagem de Fundo */
+    url('FrutasLegumes.jpeg') no-repeat center center; /* Imagem de Fundo */
   background-size: cover;
-  color: #000000; /* Texto preto para contraste */
+  color: #ffffff; /* Texto branco para contraste */
   text-align: center;
   padding: 120px 20px;
   position: relative;
 }
 .sobre h2, .sobre p {
-    /*text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Sombra preta para realçar o texto branco */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Sombra preta para realçar o texto branco */
     font-weight: bold;
 }
 
